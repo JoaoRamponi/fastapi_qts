@@ -6,4 +6,4 @@ def test_nota_invaldia_abaixo_de_zero():
 def test_nota_aprovado():
     assert classificador_nota(9) == "Aprovado"
 
-    
+
