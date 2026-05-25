@@ -1,4 +1,5 @@
 def calcular_desconto(valor, cliente_vip):
+    
     if valor <= 0:
         return 0
 
