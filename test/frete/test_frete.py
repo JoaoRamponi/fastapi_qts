@@ -1,5 +1,4 @@
 import pytest
-
 from app.frete.frete import classificar_frete
 @pytest.mark.parametrize(
     "peso_kg, regiao, premium, retorno_esperado",
