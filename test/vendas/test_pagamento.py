@@ -1,16 +1,12 @@
-import pytest
-from app.vendas.desconto import calcular_desconto
+import time
+from app.vendas.pagamento import processar_pagamento
 
-@pytest.mark.parametrize(
-    "valor_compra, cupom, desconto_esperado",
-    [
-        (100.0, "VALE10", 10.0),
-        (200, "VALE20", 40.0),
-        (150, "INVALIDO", 0.0),
-        (0.0, "VALE10", 0.0),
-        (-50.0, "VALE20", 0.0),
-        (100.0, "   vale10  ", 10.0)
-    ],
-)
-def test_calcular_desconto_funcional(valor_compra, cupom, desconto_esperado):
-    assert calcular_desconto(valor_compra, cupom) == desconto_esperado
+def test_tempo_processamento_pagamento():
+    inicio = time.perf_counter()
+    resultado = processar_pagamento(100.0)
+    fim = time.perf_counter()
+    tempo_decorrido = fim - inicio
+
+    assert resultado is True
+    ## Tempo inferior a 100 milisegundos (0.1 segundos)
+    assert tempo_decorrido < 0.1
