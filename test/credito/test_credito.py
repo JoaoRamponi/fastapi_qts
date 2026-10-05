@@ -42,3 +42,4 @@ def test_calcular_credito_limites_criticos(
     renda_mensal, score_credito, restrito, retorno_esperado
 ):
     assert classificar_credito(renda_mensal, score_credito, restrito) == retorno_esperado
+    
